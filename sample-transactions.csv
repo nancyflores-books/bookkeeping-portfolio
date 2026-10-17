@@ -1,0 +1,13 @@
+date,reference,account,description,debit,credit,payment_status,reconciliation_status
+2026-03-02,INV-1001,Accounts Receivable,Brand design - Client A (FICTIONAL),1100.00,0.00,Paid,Reconciled
+2026-03-02,INV-1001,Sales - Design Services,Brand design - Client A,0.00,1000.00,Paid,Reconciled
+2026-03-02,INV-1001,GST Collected,Tax on INV-1001,0.00,100.00,Paid,Reconciled
+2026-03-05,PMT-1001,Bank,Receipt for INV-1001,1100.00,0.00,Paid,Reconciled
+2026-03-05,PMT-1001,Accounts Receivable,Receipt for INV-1001,0.00,1100.00,Paid,Reconciled
+2026-03-10,BILL-201,Software Subscriptions,Design software,300.00,0.00,Paid,Reconciled
+2026-03-10,BILL-201,Bank,Design software payment,0.00,300.00,Paid,Reconciled
+2026-03-15,INV-1002,Accounts Receivable,Retainer - Client B (FICTIONAL),2200.00,0.00,Unpaid,Unreconciled
+2026-03-15,INV-1002,Sales - Retainers,Retainer - Client B,0.00,2000.00,Unpaid,Unreconciled
+2026-03-15,INV-1002,GST Collected,Tax on INV-1002,0.00,200.00,Unpaid,Unreconciled
+2026-03-30,BILL-204,Marketing,Ad campaign,1200.00,0.00,Paid,Outstanding payment
+2026-03-30,BILL-204,Bank,Ad campaign payment,0.00,1200.00,Paid,Outstanding payment
