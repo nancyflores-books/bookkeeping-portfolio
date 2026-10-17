@@ -1,4 +1,11 @@
-:root{--ink:#171717;--sand:#D8C5A5;--paper:#F8F7F4;--mute:#5f5f5f;--white:#fff;--blue:#1b6fb3}
+:
+/* Brand colors */
+:root{--ink:#374f59;--sand:#F2A93B;--paper:#f2eeca;--blue:#F2A93B}
+.tag.b{background:#374f59;color:#f2eeca}
+.flow li:before{color:#374f59}
+.card:hover{border-top-color:#374f59}
+.note{background:#fbe9c8;border-left-color:#F2A93B}
+a:focus-visible,button:focus-visible{outline-color:#374f59}root{--ink:#171717;--sand:#D8C5A5;--paper:#F8F7F4;--mute:#5f5f5f;--white:#fff;--blue:#1b6fb3}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper)}
 h1,h2,h3,nav,.btn,.tag,table,button{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
