@@ -13,7 +13,7 @@ function chart(id,labels,a,b,la,lb){const el=document.getElementById(id);if(!el)
 chart('c1',['Jan','Feb','Mar'],[18000,20000,22000],[12000,12500,13000],'Revenue','Expenses');
 // Click-to-enlarge for case study screenshots and certificates
 (function(){
-var css='.lb-wrap{position:relative}.lb-wrap img{cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}.lb-wrap:hover img{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25)}.lb-badge{position:absolute;right:10px;bottom:10px;background:#374f59;color:#f2eeca;font:.75rem system-ui;padding:5px 11px;border-radius:99px;pointer-events:none}'+
+var css='.lb-wrap{position:relative}.lb-wrap img{cursor:zoom-in;transition:box-shadow .25s ease}.lb-wrap:hover img{box-shadow:0 0 24px rgba(242,169,59,.6)}.lb-badge{position:absolute;right:10px;bottom:10px;background:#374f59;color:#f2eeca;font:.75rem system-ui;padding:5px 11px;border-radius:99px;pointer-events:none}'+
 '#lb{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(55,79,89,.94);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}#lb.open{opacity:1;visibility:visible}'+
 '#lb img{max-width:92vw;max-height:78vh;background:#fff;border:6px solid #f2eeca;border-radius:12px;box-shadow:-14px 14px 0 #F2A93B;transform:scale(.9);transition:transform .35s cubic-bezier(.2,.8,.2,1)}#lb.open img{transform:scale(1)}'+
 '#lb p{margin:0;color:#f2eeca;font:.9rem system-ui;max-width:80vw;text-align:center}#lb button{position:absolute;top:16px;right:20px;background:#F2A93B;color:#374f59;border:0;border-radius:99px;font:700 .9rem system-ui;padding:10px 18px;cursor:pointer}'+
@@ -35,10 +35,20 @@ document.querySelectorAll('.cs img,.cg-i img').forEach(function(img){
 lb.addEventListener('click',function(e){if(e.target!==big)close()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
 })();
-// Scroll reveal: elements fade up as they enter the screen
+// Scroll credits effect: items rise into place, following the scroll position
 (function(){
-if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-var els=document.querySelectorAll('main section h2,main section>p,.hero>*,.sv-card,.tl-card,.cs,.ce,.cg-i,.st-row,.ab-stats div,.flow li');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in');t.style.transitionDelay=''},1000)}})},{threshold:.12});
-els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var st=document.createElement('style');
+st.textContent='main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}main .cg-i:hover{box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}';
+document.head.appendChild(st);
+var sel='.hero>*,main section>h2,main section>h3,main section>p,main section>.eb,main section>.tabs,main section>.tw,main section>.panel,main section>ol,main section>a,main section>.note,main section>.why,.ab-stats>div,.ab-cols>div,.sv-card,.tl-card,.cs,.ce,.cg-i,.st-row,.ct-card,.flow>li,footer';
+var els=[].slice.call(document.querySelectorAll(sel)),ty=els.map(function(){return 0}),off=els.map(function(_,i){return (i%4)*28});
+els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
+var busy=false;
+function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.6;
+ for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i]+off[i];
+  var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*80;ty[i]=y;
+  el.style.opacity=p;el.style.transform='translateY('+y+'px)'}}
+function req(){if(!busy){busy=true;requestAnimationFrame(run)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);run();
 })();
