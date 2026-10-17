@@ -25,7 +25,7 @@ document.body.appendChild(lb);
 var big=lb.querySelector('img'),cap=lb.querySelector('p'),x=lb.querySelector('button'),last=null;
 function open(img){last=img;big.src=img.src;big.alt=img.alt;cap.textContent=img.alt;lb.classList.add('open');document.body.style.overflow='hidden';x.focus()}
 function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus()}
-document.querySelectorAll('.cs img').forEach(function(img){
+document.querySelectorAll('.cs img,.cg-i img').forEach(function(img){
  var w=document.createElement('div');w.className='lb-wrap';img.parentNode.insertBefore(w,img);w.appendChild(img);
  var b=document.createElement('span');b.className='lb-badge';b.textContent='Click to enlarge';w.appendChild(b);
  img.tabIndex=0;img.setAttribute('role','button');
