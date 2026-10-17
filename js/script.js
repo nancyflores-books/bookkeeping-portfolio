@@ -11,7 +11,7 @@ function chart(id,labels,a,b,la,lb){const el=document.getElementById(id);if(!el)
  el.innerHTML=labels.map((l,i)=>`<div class="bar"><div class="pair"><i style="height:${a[i]/m*100}%" title="${la}: ${a[i]}"></i><i class="e" style="height:${b[i]/m*100}%" title="${lb}: ${b[i]}"></i></div>${l}</div>`).join('');
  el.setAttribute('aria-label',labels.map((l,i)=>`${l}: ${la} ${a[i]}, ${lb} ${b[i]}`).join('; '))}
 chart('c1',['Jan','Feb','Mar'],[18000,20000,22000],[12000,12500,13000],'Revenue','Expenses');
-// Click-to-enlarge for case study screenshots
+// Click-to-enlarge for case study screenshots and certificates
 (function(){
 var css='.lb-wrap{position:relative}.lb-wrap img{cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}.lb-wrap:hover img{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25)}.lb-badge{position:absolute;right:10px;bottom:10px;background:#374f59;color:#f2eeca;font:.75rem system-ui;padding:5px 11px;border-radius:99px;pointer-events:none}'+
 '#lb{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(55,79,89,.94);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}#lb.open{opacity:1;visibility:visible}'+
@@ -35,4 +35,10 @@ document.querySelectorAll('.cs img,.cg-i img').forEach(function(img){
 lb.addEventListener('click',function(e){if(e.target!==big)close()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
 })();
-
+// Scroll reveal: elements fade up as they enter the screen
+(function(){
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var els=document.querySelectorAll('main section h2,main section>p,.hero>*,.sv-card,.tl-card,.cs,.ce,.cg-i,.st-row,.ab-stats div,.flow li');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in');t.style.transitionDelay=''},1000)}})},{threshold:.12});
+els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+})();
