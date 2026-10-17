@@ -11,4 +11,4 @@ function chart(id,labels,a,b,la,lb){const el=document.getElementById(id),m=Math.
  el.innerHTML=labels.map((l,i)=>`<div class="bar"><div class="pair"><i style="height:${a[i]/m*100}%" title="${la}: ${a[i]}"></i><i class="e" style="height:${b[i]/m*100}%" title="${lb}: ${b[i]}"></i></div>${l}</div>`).join('');
  el.setAttribute('aria-label',labels.map((l,i)=>`${l}: ${la} ${a[i]}, ${lb} ${b[i]}`).join('; '))}
 chart('c1',['Jan','Feb','Mar'],[18000,20000,22000],[12000,12500,13000],'Revenue','Expenses');
-chart('c2',['Jan','Feb','Mar'],[4500,4500,3100],[1500,1700,1300],'Rent collected','Expenses');
+
