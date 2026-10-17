@@ -1,4 +1,4 @@
-:root{--ink:#374f59;--sand:#F2A93B;--paper:#f2eeca;--mute:#5f5f5f;--white:#fff;--blue:#F2A93B}
+:root{--ink:#374f59;--sand:#F2A93B;--paper:#f2eeca;--mute:#5f5f5f;--white:#f9f6dc;--blue:#F2A93B}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper)}
 h1,h2,h3,nav,.btn,.tag,table,button{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
