@@ -1,38 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
-:root{--ink:#374f59;--sand:#F2A93B;--paper:#f2eeca;--mute:#5f5f5f;--white:#faf7e0;--blue:#F2A93B}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper)}
-h1,h2,h3,nav,.btn,.tag,table,button{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
-h1,h2{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
-h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;margin:.3em 0}h2{font-size:2.2rem;margin:0 0 .4em}
-section{padding:72px 6vw;max-width:1100px;margin:auto}.alt{background:var(--ink);color:var(--paper);max-width:none}.alt>div{max-width:1100px;margin:auto}
-.alt:has(#about){background:var(--white);color:var(--ink)}
-header{position:sticky;top:0;background:var(--ink);z-index:9;display:flex;justify-content:space-between;align-items:center;padding:12px 6vw;border-bottom:1px solid #4d6874}
-header a{color:var(--paper);text-decoration:none}nav{display:flex;gap:20px;font-size:.9rem}nav a:hover{color:var(--sand)}
-#menu{display:none;background:none;color:var(--paper);border:1px solid var(--sand);padding:6px 12px}
-.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;background:var(--ink);color:var(--paper);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
-.hero .btn{border-color:var(--paper);color:var(--paper)}.hero .btn.p{background:var(--sand);border-color:var(--sand);color:var(--ink)}.hero .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-.hero .tag.b{background:var(--sand);color:var(--ink)}
-.portrait{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:14px;border:8px solid var(--paper);box-shadow:-18px 18px 0 var(--sand);justify-self:center}
-.btn{display:inline-block;padding:12px 22px;margin:6px 8px 6px 0;text-decoration:none;border:2px solid var(--ink);color:var(--ink);transition:.2s}
-.btn.p{background:var(--ink);color:var(--paper)}.btn:hover{background:var(--sand);color:var(--ink)}
-.tag{font-size:.75rem;padding:3px 9px;border-radius:99px;background:var(--sand);display:inline-block}.tag.b{background:#374f59;color:#f2eeca}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:var(--white);border:1px solid #e4dfd3;border-top:4px solid var(--sand);padding:22px;transition:.2s}.card:hover{transform:translateY(-3px);border-top-color:#374f59}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.tabs button{padding:10px 14px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--ink);color:var(--paper)}.panel[hidden]{display:none}
-.alt .tabs button{border-color:var(--paper);color:var(--paper)}.alt .tabs button[aria-selected=true]{background:var(--paper);color:var(--ink)}
-.alt a{color:var(--sand)}.alt .note{color:var(--ink)}.alt th{background:#2a3d45}
-table{border-collapse:collapse;width:100%;font-size:.9rem;background:var(--white);color:var(--ink)}th,td{padding:8px 10px;border-bottom:1px solid #e4dfd3;text-align:left}th{background:var(--ink);color:var(--paper)}.num{text-align:right}
-caption{color:inherit;text-align:left;padding:6px 0;font-weight:600}
-.tw{overflow-x:auto}.bars{display:flex;align-items:flex-end;gap:14px;height:170px;border-bottom:2px solid var(--ink);padding:0 10px}
-.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font:.75rem system-ui}.bar i{width:100%;display:block;background:var(--ink)}.bar i.e{background:var(--sand)}
-.alt .bars{border-bottom-color:var(--paper)}.alt .bar i{background:var(--paper)}.alt .bar i.e{background:var(--sand)}
-.pair{display:flex;gap:3px;align-items:flex-end;height:100%;width:100%}.pair i{flex:1}
-.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;counter-reset:s;list-style:none;padding:0}
-.flow li{counter-increment:s;background:var(--white);padding:16px;border-left:4px solid var(--sand)}.flow li:before{content:counter(s);font:700 1.3rem system-ui;display:block;color:#374f59}
-.note{font:.85rem system-ui;background:#fbe9c8;border-left:4px solid #F2A93B;padding:10px 14px;margin:16px 0}
-footer{background:var(--ink);color:var(--paper);text-align:center;padding:40px 6vw;font:.9rem system-ui}footer a{color:var(--sand)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--sand);outline-offset:2px}
-@media(max-width:760px){.hero{grid-template-columns:1fr}.portrait{box-shadow:-10px 10px 0 var(--sand)}#menu{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;padding:16px 6vw}nav.open{display:flex}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nancy Flores | Xero Bookkeeper | Virtual Bookkeeping & Financial Operations Support</title>
+<meta name="description" content="Portfolio of Nancy Flores, remote Xero and QuickBooks Online bookkeeper: reconciliations, AP/AR, GST/BAS, UK VAT and financial reporting. Sample projects use fictional data.">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header><a href="#top"><strong>Nancy Flores</strong></a><button id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#workflow">Workflow</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></header>
+<main id="top">
+<section class="hero"><div><span class="tag b">Xero Bookkeeper | Virtual Bookkeeping &amp; Financial Operations Support</span>
+<h1>Accurate Books. Clear Numbers. Better Business Decisions.</h1>
+<p>I help businesses keep their financial records organized through structured bookkeeping workflows, bank reconciliation, transaction categorization, and clear financial reporting.</p>
+<a class="btn p" href="#work">View My Work</a><a class="btn" href="#contact">Let's Work Together</a>
+<p><small>Xero · QuickBooks Online · Xero Payroll · GST/BAS · UK VAT · Excel &amp; Google Sheets</small></p></div>
+<img src="profile.jpeg" alt="Nancy Flores, bookkeeper" class="portrait"></section>
+
+<div class="alt"><section id="about" style="max-width:1100px"><h2>About Me</h2>
+<p>I am a detail-focused bookkeeper who keeps financial records organized, monitors transactions, reconciles accounts and prepares clear reports. I work confidentially and follow repeatable processes, and I keep learning in Xero and cloud accounting.</p>
+<p>My background includes Xero and QuickBooks Online internships, practice engagements for UK and US scenarios, and over ten years maintaining member financial records in Excel. I am based in India (Philippine citizen) and available for remote work.</p></section></div>
+
+<section id="services"><h2>Core Bookkeeping Services</h2>
+<p><span class="tag b">Portfolio demo</span> = shown in a sample project below. <span class="tag">Ready to offer</span> = a service I provide to clients.</p>
+<div class="grid">
+<article class="card"><h3>Xero Bookkeeping &amp; Categorization</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Bank &amp; Credit Card Reconciliation</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Accounts Payable &amp; Receivable Tracking</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Invoice &amp; Expense Management</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article>
+<article class="card"><h3>P&amp;L, Balance Sheet &amp; Cash Flow Reports</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Monthly Bookkeeping &amp; Record Maintenance</h3><span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Spreadsheet Tracking &amp; Reporting</h3><span class="tag">Ready to offer</span></article>
+<article class="card"><h3>Property Management Bookkeeping</h3><span class="tag b">Portfolio demo</span> <span class="tag">Ready to offer</span></article></div></section>
+
+<div class="alt"><section id="work" style="max-width:1100px"><h2>Featured Portfolio Projects</h2>
+<p class="note"><strong>Disclaimer:</strong> every project below uses fictional data and is a practice demonstration, not real client work. Not affiliated with or endorsed by Xero.</p>
+<div class="tabs" role="tablist"><button role="tab" data-p="p1">1 Workflow</button><button role="tab" data-p="p2">2 Reconciliation</button><button role="tab" data-p="p3">3 Reporting</button><button role="tab" data-p="p4">4 AR / AP</button><button role="tab" data-p="p5">5 Rental Property</button></div>
+
+<div class="panel" id="p1"><h3>Xero Bookkeeping Workflow</h3><p><b>Scenario:</b> Harbor Lane Studio (fictional design studio) needs its March records organized. <b>Objective:</b> record sales and expenses, categorize correctly, close the month.</p>
+<div class="tw"><table><caption>Sample journal entries (fictional)</caption><tr><th>Ref</th><th>Account</th><th class="num">Debit</th><th class="num">Credit</th></tr>
+<tr><td>INV-1001</td><td>Accounts Receivable</td><td class="num">1,100.00</td><td></td></tr><tr><td></td><td>Sales - Design Services</td><td></td><td class="num">1,000.00</td></tr><tr><td></td><td>GST Collected</td><td></td><td class="num">100.00</td></tr>
+<tr><th colspan="2">Totals</th><th class="num">1,100.00</th><th class="num">1,100.00</th></tr></table></div>
+<p><b>Deliverables:</b> chart of accounts, categorized transactions, ledger, month-end checklist. <a href="projects/xero-bookkeeping-workflow.md">Full case study</a></p></div>
+
+<div class="panel" id="p2" hidden><h3>Bank Reconciliation</h3><p><b>Scenario:</b> March bank statement versus books. <b>Objective:</b> explain every difference.</p>
+<div class="tw"><table><caption>Reconciliation summary (fictional)</caption><tr><td>Bank statement balance, 31 Mar</td><td class="num">24,850.00</td></tr><tr><td>Less: BILL-204 payment not yet cleared</td><td class="num">(1,200.00)</td></tr><tr><td>Add: deposit in transit</td><td class="num">350.00</td></tr><tr><th>Adjusted bank = Ledger balance</th><th class="num">24,000.00</th></tr></table></div>
+<p><b>Finding:</b> the difference was timing only; no errors. <a href="projects/bank-reconciliation.md">Full case study</a></p></div>
+
+<div class="panel" id="p3" hidden><h3>Financial Reporting Dashboard</h3><p><b>Scenario:</b> owner wants Q1 performance at a glance. <b>Objective:</b> consistent P&amp;L, Balance Sheet and cash flow.</p>
+<div class="bars" id="c1" role="img"></div><p><small>Cream = revenue, marigold = expenses, Jan to Mar. Fictional data. Q1 net profit 22,500.</small></p>
+<div class="grid"><div class="tw"><table><caption>P&amp;L, March (fictional)</caption><tr><td>Revenue</td><td class="num">22,000</td></tr><tr><td>Expenses</td><td class="num">13,000</td></tr><tr><th>Net profit</th><th class="num">9,000</th></tr></table></div>
+<div class="tw"><table><caption>Balance Sheet, 31 Mar (fictional)</caption><tr><td>Cash</td><td class="num">24,000</td></tr><tr><td>Receivables</td><td class="num">6,500</td></tr><tr><td>Equipment</td><td class="num">5,000</td></tr><tr><th>Total assets</th><th class="num">35,500</th></tr><tr><td>Payables + GST</td><td class="num">5,500</td></tr><tr><td>Capital 7,500 + profit 22,500</td><td class="num">30,000</td></tr><tr><th>Liabilities + equity</th><th class="num">35,500</th></tr></table></div></div>
+<p><b>Cash flow (Q1):</b> operating 21,500, investing (5,000), financing 7,500 = net 24,000 from zero opening cash. <a href="projects/financial-reporting.md">Full case study</a></p></div>
+
+<div class="panel" id="p4" hidden><h3>Accounts Receivable &amp; Payable</h3><p><b>Scenario:</b> late payers and bills due. <b>Objective:</b> track status and aging.</p>
+<div class="tw"><table><caption>Aging at 31 Mar (fictional)</caption><tr><th></th><th class="num">Current</th><th class="num">1-30</th><th class="num">31-60</th><th class="num">Total</th></tr><tr><td>Receivables</td><td class="num">4,000</td><td class="num">1,500</td><td class="num">1,000</td><td class="num">6,500</td></tr><tr><td>Payables</td><td class="num">2,000</td><td class="num">1,000</td><td class="num">0</td><td class="num">3,000</td></tr></table></div>
+<p><a href="projects/accounts-receivable-payable.md">Full case study</a></p></div>
+
+<div class="panel" id="p5" hidden><h3>Rental Property Bookkeeping</h3><p><b>Scenario:</b> fictional 3-unit building. <b>Objective:</b> monitor rent collection and property-level income.</p>
+<div class="bars" id="c2" role="img"></div><p><small>Cream = rent collected, marigold = expenses, Jan to Mar. Fictional data.</small></p>
+<div class="tw"><table><caption>Q1 summary (fictional)</caption><tr><td>Rent due (1,500 + 1,400 + 1,600 per month)</td><td class="num">13,500</td></tr><tr><td>Rent collected (Unit B unpaid in March)</td><td class="num">12,100</td></tr><tr><td>Operating expenses</td><td class="num">4,500</td></tr><tr><th>Net operating income</th><th class="num">7,600</th></tr></table></div>
+<p><a href="projects/rental-property-bookkeeping.md">Full case study</a> · <a href="data/sample-transactions.csv">Sample transactions (CSV)</a></p></div>
+</section></div>
+
+<section id="workflow"><h2>Xero Workflow Demonstration</h2><p>A visual overview of a typical process. This is an illustration, not a live Xero connection.</p>
+<ol class="flow"><li><b>Source Documents</b><br>Collect invoices, receipts and statements.</li><li><b>Entry &amp; Categorization</b><br>Record each item in the right account.</li><li><b>Bank Reconciliation</b><br>Match books to the bank.</li><li><b>Accounts Review</b><br>Check receivables, payables and odd items.</li><li><b>Financial Reports</b><br>Prepare P&amp;L, Balance Sheet, cash flow.</li><li><b>Month-End Review</b><br>Sign off and list open questions.</li></ol>
+<p>Actual procedures depend on client requirements, access permissions and the agreed scope of work.</p></section>
+
+<div class="alt"><section id="skills" style="max-width:1100px"><h2>Skills &amp; Tools</h2><div class="tw"><table><tr><th>Skill</th><th>Level</th></tr>
+<tr><td>Xero accounting workflows</td><td>Practiced</td></tr><tr><td>Bank reconciliation</td><td>Practiced</td></tr><tr><td>Transaction categorization</td><td>Practiced</td></tr><tr><td>Accounts receivable &amp; payable</td><td>Practiced</td></tr><tr><td>Financial statement preparation</td><td>Practiced</td></tr><tr><td>Spreadsheet reporting / Excel</td><td>Proficient</td></tr><tr><td>Google Sheets</td><td>Practiced</td></tr><tr><td>Data accuracy &amp; confidentiality</td><td>Proficient</td></tr></table></div>
+<h3>Credentials</h3><p>Xero Certified Associate L1 and Professional L2 (May 2026) · Xero Payroll Specialist (June 2026) · Intuit ProAdvisor QuickBooks Levels 1 and 2 (March 2026)</p></section></div>
+
+<section id="process"><h2>Professional Process</h2><ol><li>Collect and organize financial documents</li><li>Review transactions and supporting records</li><li>Categorize income and expenses</li><li>Reconcile bank and credit card accounts</li><li>Review outstanding receivables and payables</li><li>Investigate discrepancies</li><li>Prepare financial reports</li><li>Complete month-end review and document open questions</li></ol><p>Scope and access are agreed with each client first.</p></section>
+
+<section id="contact"><h2>Contact</h2><p><strong>Let's bring clarity and structure to your business finances.</strong></p>
+<a class="btn p" href="mailto:nancyflores.books@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/nancyabestadoflores" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/nancyfloresbookkeeper" target="_blank" rel="noopener">GitHub</a></section>
+</main>
+<footer>Nancy Flores · Philippine citizen, based in India · Available for remote work<br>All sample data is fictional. Not affiliated with or endorsed by Xero or Intuit.</footer>
+<script src="js/script.js"></script></body></html>
