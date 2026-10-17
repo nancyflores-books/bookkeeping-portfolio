@@ -13,7 +13,7 @@ header a{color:var(--paper);text-decoration:none}nav{display:flex;gap:20px;font-
 .hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;background:var(--ink);color:var(--paper);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
 .hero .btn{border-color:var(--paper);color:var(--paper)}.hero .btn.p{background:var(--sand);border-color:var(--sand);color:var(--ink)}.hero .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
 .hero .tag.b{background:var(--sand);color:var(--ink)}
-.portrait{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:14px;border:8px solid var(--paper);box-shadow:-18px 18px 0 var(--sand);justify-self:center}
+.portrait{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:14px;border:8px solid var(--ink);box-shadow:-18px 18px 0 var(--sand);justify-self:center}
 .btn{display:inline-block;padding:12px 22px;margin:6px 8px 6px 0;text-decoration:none;border:2px solid var(--ink);color:var(--ink);transition:.2s}
 .btn.p{background:var(--ink);color:var(--paper)}.btn:hover{background:var(--sand);color:var(--ink)}
 .tag{font-size:.75rem;padding:3px 9px;border-radius:99px;background:var(--sand);display:inline-block}.tag.b{background:#374f59;color:#f2eeca}
