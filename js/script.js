@@ -45,10 +45,10 @@ var els=[].slice.call(document.querySelectorAll('main section>*,footer')).filter
 var ty=els.map(function(){return 0});
 els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
 var busy=false;
-function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.6;
+function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.35;
  for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i];
-  var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*80;ty[i]=y;
-  el.style.opacity=p;el.style.transform='translateY('+y+'px)'}}
+  var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*220;ty[i]=y;
+  el.style.opacity=Math.min(1,p*3);el.style.transform='translateY('+y+'px)'}}
 function req(){if(!busy){busy=true;requestAnimationFrame(run)}}
 addEventListener('scroll',req,{passive:true});addEventListener('resize',req);run();
 })();
