@@ -35,18 +35,18 @@ document.querySelectorAll('.cs img,.cg-i img').forEach(function(img){
 lb.addEventListener('click',function(e){if(e.target!==big)close()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
 })();
-// Scroll credits effect: items rise into place, following the scroll position
+// Scroll credits effect: each group rises into place as one block, following the scroll position
 (function(){
 if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 var st=document.createElement('style');
-st.textContent='main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}main .cg-i:hover{box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}';
+st.textContent='main .sv-card:hover,main .tl-card:hover,main .ce:hover,main .st-row:hover,main .card:hover,main .ab-stats div:hover,main .flow li:hover{transform:none!important;box-shadow:0 0 0 2px #F2A93B,0 0 26px rgba(242,169,59,.5)!important}main .cg-i:hover{transform:none!important;box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}';
 document.head.appendChild(st);
-var sel='.hero>*,main section>h2,main section>h3,main section>p,main section>.eb,main section>.tabs,main section>.tw,main section>.panel,main section>ol,main section>a,main section>.note,main section>.why,.ab-stats>div,.ab-cols>div,.sv-card,.tl-card,.cs,.ce,.cg-i,.st-row,.ct-card,.flow>li,footer';
-var els=[].slice.call(document.querySelectorAll(sel)),ty=els.map(function(){return 0}),off=els.map(function(_,i){return (i%4)*28});
+var els=[].slice.call(document.querySelectorAll('main section>*,footer')).filter(function(e){return e.tagName!=='STYLE'});
+var ty=els.map(function(){return 0});
 els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
 var busy=false;
 function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.6;
- for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i]+off[i];
+ for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i];
   var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*80;ty[i]=y;
   el.style.opacity=p;el.style.transform='translateY('+y+'px)'}}
 function req(){if(!busy){busy=true;requestAnimationFrame(run)}}
