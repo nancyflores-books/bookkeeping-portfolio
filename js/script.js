@@ -6,6 +6,23 @@ nav.addEventListener('click',e=>{if(e.target.tagName==='A')nav.classList.remove(
 const tabs=[...document.querySelectorAll('.tabs button')],panels=[...document.querySelectorAll('.panel')];
 function show(id){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.p===id));panels.forEach(p=>p.hidden=p.id!==id)}
 tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.p)));show('p1');
+// Scroll credits effect: each group rises into place as one block, following the scroll position
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var st=document.createElement('style');
+st.textContent='main .sv-card:hover,main .tl-card:hover,main .ce:hover,main .wf-c:hover,main .dl-card:hover,main .card:hover,main .ab-stats div:hover{transform:none!important;box-shadow:0 0 0 2px #F2A93B,0 0 26px rgba(242,169,59,.5)!important}main .cg-i:hover{transform:none!important;box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}';
+document.head.appendChild(st);
+var els=[].slice.call(document.querySelectorAll('main section>*,footer')).filter(function(e){return e.tagName!=='STYLE'});
+var ty=els.map(function(){return 0});
+els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
+var busy=false;
+function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.35;
+ for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i];
+  var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*220;ty[i]=y;
+  el.style.opacity=Math.min(1,p*3);el.style.transform='translateY('+y+'px)'}}
+function req(){if(!busy){busy=true;requestAnimationFrame(run)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);addEventListener('load',req);run();
+})();
 // Chart (FICTIONAL data)
 function chart(id,labels,a,b,la,lb){const el=document.getElementById(id);if(!el)return;const m=Math.max(...a,...b);
  el.innerHTML=labels.map((l,i)=>`<div class="bar"><div class="pair"><i style="height:${a[i]/m*100}%" title="${la}: ${a[i]}"></i><i class="e" style="height:${b[i]/m*100}%" title="${lb}: ${b[i]}"></i></div>${l}</div>`).join('');
@@ -13,11 +30,10 @@ function chart(id,labels,a,b,la,lb){const el=document.getElementById(id);if(!el)
 chart('c1',['Jan','Feb','Mar'],[18000,20000,22000],[12000,12500,13000],'Revenue','Expenses');
 // Click-to-enlarge for case study screenshots and certificates
 (function(){
-var css='.lb-wrap{position:relative}.lb-wrap img{cursor:zoom-in;transition:box-shadow .25s ease}.lb-wrap:hover img{box-shadow:0 0 24px rgba(242,169,59,.6)}.lb-badge{position:absolute;right:10px;bottom:10px;background:#374f59;color:#f2eeca;font:.75rem system-ui;padding:5px 11px;border-radius:99px;pointer-events:none}'+
+var css='.lb-wrap{position:relative}.lb-wrap img{cursor:zoom-in;transition:box-shadow .25s ease}.lb-wrap:hover img{box-shadow:0 0 24px rgba(242,169,59,.6)}.lb-badge{position:absolute;right:10px;bottom:10px;background:#374f59;color:#f2eeca;font:.75rem Jost,system-ui;padding:5px 11px;border-radius:99px;pointer-events:none}'+
 '#lb{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(55,79,89,.94);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}#lb.open{opacity:1;visibility:visible}'+
 '#lb img{max-width:92vw;max-height:78vh;background:#fff;border:6px solid #f2eeca;border-radius:12px;box-shadow:-14px 14px 0 #F2A93B;transform:scale(.9);transition:transform .35s cubic-bezier(.2,.8,.2,1)}#lb.open img{transform:scale(1)}'+
-'#lb p{margin:0;color:#f2eeca;font:.9rem system-ui;max-width:80vw;text-align:center}#lb button{position:absolute;top:16px;right:20px;background:#F2A93B;color:#374f59;border:0;border-radius:99px;font:700 .9rem system-ui;padding:10px 18px;cursor:pointer}'+
-'@media(prefers-reduced-motion:reduce){#lb,#lb img,.lb-wrap img{transition:none}}';
+'#lb p{margin:0;color:#f2eeca;font:.9rem Jost,system-ui;max-width:80vw;text-align:center}#lb button{position:absolute;top:16px;right:20px;background:#F2A93B;color:#374f59;border:0;border-radius:99px;font:700 .9rem Jost,system-ui;padding:10px 18px;cursor:pointer}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 var lb=document.createElement('div');lb.id='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Enlarged image');
 lb.innerHTML='<button type="button">Close ✕</button><img alt=""><p></p>';
@@ -34,21 +50,4 @@ document.querySelectorAll('.cs img,.cg-i img').forEach(function(img){
 });
 lb.addEventListener('click',function(e){if(e.target!==big)close()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
-})();
-// Scroll credits effect: each group rises into place as one block, following the scroll position
-(function(){
-if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-var st=document.createElement('style');
-st.textContent='main .sv-card:hover,main .tl-card:hover,main .ce:hover,main .st-row:hover,main .card:hover,main .ab-stats div:hover,main .flow li:hover{transform:none!important;box-shadow:0 0 0 2px #F2A93B,0 0 26px rgba(242,169,59,.5)!important}main .cg-i:hover{transform:none!important;box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}';
-document.head.appendChild(st);
-var els=[].slice.call(document.querySelectorAll('main section>*,footer')).filter(function(e){return e.tagName!=='STYLE'});
-var ty=els.map(function(){return 0});
-els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
-var busy=false;
-function run(){busy=false;var H=innerHeight,a=H*.96,b=H*.35;
- for(var i=0;i<els.length;i++){var el=els[i],r=el.getBoundingClientRect(),top=r.top-ty[i];
-  var p=Math.min(1,Math.max(0,(a-top)/(a-b)));var y=(1-p)*220;ty[i]=y;
-  el.style.opacity=Math.min(1,p*3);el.style.transform='translateY('+y+'px)'}}
-function req(){if(!busy){busy=true;requestAnimationFrame(run)}}
-addEventListener('scroll',req,{passive:true});addEventListener('resize',req);run();
 })();
