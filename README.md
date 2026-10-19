@@ -1,4 +1,4 @@
-# Nancy Flores | QuickBooks Online & Xero Bookkeeping Portfolio
+# Nancy Flores | Bookkeeping Portfolio
 
 **Live site:** https://nancyflores-books.github.io/bookkeeping-portfolio/
 
