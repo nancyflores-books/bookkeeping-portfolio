@@ -13,7 +13,7 @@ A portfolio website for Nancy Flores, a remote bookkeeper trained in QuickBooks 
 | Practice company | Software and workflow | Period | Source-record items |
 |---|---|---|---:|
 | House of Chi LLC | QuickBooks Online | Jan to Mar 2025 | 2,167 |
-| Clarity Haven Consulting Ltd | Excel, then Xero | Jan to Apr 2025 | 1,945 |
+| Clarity Haven Consulting Ltd | Google Sheets, then Xero | Jan to Apr 2025 | 1,945 |
 | DevEdge Digital Ltd | Xero with UK VAT | May to Jul 2025 | 566 |
 | Aivance LLC | Google Sheets, then Xero | Jan to Mar 2025 | 205 |
 | **Total** | | | **4,883** |
@@ -28,7 +28,7 @@ Each follows Context, Actions, Results and Proof.
 2. Xero Payroll and Quarterly BAS (Accounting Ace Xero training)
 3. Three-Month Bookkeeping Cleanup (Hey! It's Kajea's 30-Day Bookkeeping Challenge)
 4. QuickBooks Online Catch-Up (Hey! It's Kajea's 30-Day Bookkeeping Challenge)
-5. Excel-to-Xero Conversion and Four-Month Reporting (Hey! It's Kajea's 30-Day Bookkeeping Challenge)
+5. Google Sheets-to-Xero Conversion and Four-Month Reporting (Hey! It's Kajea's 30-Day Bookkeeping Challenge)
 6. UK VAT Bookkeeping in Xero (Hey! It's Kajea's 30-Day Bookkeeping Challenge)
 
 ## Sample deliverables (fictional data)
