@@ -412,5 +412,27 @@ html{scroll-padding-top:100px}
 <div><a class="btn p" href="https://forms.gle/Yyi9wMNm1Q6k2PZa9" target="_blank" rel="noopener">Request a discovery call</a><a class="btn" href="https://mail.google.com/mail/?view=cm&amp;to=nancyflores.books@gmail.com&amp;su=Bookkeeping%20inquiry" target="_blank" rel="noopener">Email me</a><a class="btn" href="https://linkedin.com/in/nancyabestadoflores" target="_blank" rel="noopener">Connect on LinkedIn</a><a class="btn" href="#work">View case studies</a></div>
 <div class="cta-d"><span>nancyflores.books@gmail.com</span><span>Philippine citizen · working remotely from India</span><span>Available to align with AU, UK, or US business hours.</span><a href="https://linkedin.com/in/nancyabestadoflores" target="_blank" rel="noopener">linkedin.com/in/nancyabestadoflores</a><span style="font-size:.8rem;opacity:.75;margin-top:14px">All sample data is fictional. Not affiliated with or endorsed by Xero or Intuit.</span></div>
 </div>
-</section><style>#process .wf-c{background:var(--paper);color:var(--ink)}#process .wf-c h3{color:#8a5200}#process .wf-c:not(:last-child)::after{color:var(--sand)}#process .wf-i{background:var(--ink)}#workflow .dl-card{background:var(--ink);color:var(--paper)}#skills .tl-card{background:var(--paper);color:var(--ink)}#skills .tl-card b{color:#8a5200}#skills .tl-ico{background:var(--ink)}#skills .sk{background:var(--paper);color:var(--ink)}#skills .sk th{background:var(--ink);color:var(--sand)}#skills .sk td{border-bottom-color:#d9d3a8}#skills .lv{background:var(--ink);color:var(--paper)}#certs .cg-i{background:var(--ink);color:var(--paper);border-color:var(--ink)}</style><style> main>section,main>div.alt{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important} #recognition{background:#f2eeca!important;color:#374f59!important} #security{background:#374f59!important;color:#f2eeca!important} #contact{background:#f2eeca!important;color:#374f59!important} #contact .cta-box{background:#374f59!important;color:#f2eeca!important;border:3px solid #F2A93B!important;box-shadow:-14px 14px 0 #F2A93B!important} #contact .cta-box .cta-eb,#contact .cta-box .cta-h em,#contact .cta-box .cta-d a{color:#F2A93B!important} #contact .cta-box .cta-eb::before{background:#F2A93B!important} #contact .cta-box .btn{border-color:#f2eeca!important;color:#f2eeca!important} #contact .cta-box .btn.p{background:#F2A93B!important;border-color:#F2A93B!important;color:#374f59!important} #contact .cta-box .btn:hover{background:#f2eeca!important;border-color:#f2eeca!important;color:#374f59!important} #certs,#recognition,#security,#contact{position:relative!important;left:50%!important;width:100vw!important;max-width:none!important;margin-left:-50vw!important;margin-right:0!important;box-sizing:border-box!important} #recognition{padding-bottom:0!important} .cs.rcx{margin-bottom:clamp(64px,8vw,110px)!important} #contact .cta-box{max-width:1180px;margin-left:auto!important;margin-right:auto!important} body{overflow-x:hidden}</style></main>
+</section><style>#process .wf-c{background:var(--paper);color:var(--ink)}#process .wf-c h3{color:#8a5200}#process .wf-c:not(:last-child)::after{color:var(--sand)}#process .wf-i{background:var(--ink)}#workflow .dl-card{background:var(--ink);color:var(--paper)}#skills .tl-card{background:var(--paper);color:var(--ink)}#skills .tl-card b{color:#8a5200}#skills .tl-ico{background:var(--ink)}#skills .sk{background:var(--paper);color:var(--ink)}#skills .sk th{background:var(--ink);color:var(--sand)}#skills .sk td{border-bottom-color:#d9d3a8}#skills .lv{background:var(--ink);color:var(--paper)}#certs .cg-i{background:var(--ink);color:var(--paper);border-color:var(--ink)}</style><style> main>section,main>div.alt{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important} #recognition{background:#f2eeca!important;color:#374f59!important} #security{background:#374f59!important;color:#f2eeca!important} #contact{background:#f2eeca!important;color:#374f59!important} #contact .cta-box{background:#374f59!important;color:#f2eeca!important;border:3px solid #F2A93B!important;box-shadow:-14px 14px 0 #F2A93B!important} #contact .cta-box .cta-eb,#contact .cta-box .cta-h em,#contact .cta-box .cta-d a{color:#F2A93B!important} #contact .cta-box .cta-eb::before{background:#F2A93B!important} #contact .cta-box .btn{border-color:#f2eeca!important;color:#f2eeca!important} #contact .cta-box .btn.p{background:#F2A93B!important;border-color:#F2A93B!important;color:#374f59!important} #contact .cta-box .btn:hover{background:#f2eeca!important;border-color:#f2eeca!important;color:#374f59!important} #certs,#recognition,#security,#contact{position:relative!important;left:50%!important;width:100vw!important;max-width:none!important;margin-left:-50vw!important;margin-right:0!important;box-sizing:border-box!important} #recognition{padding-bottom:0!important} .cs.rcx{margin-bottom:clamp(64px,8vw,110px)!important} #contact .cta-box{max-width:1180px;margin-left:auto!important;margin-right:auto!important} body{overflow-x:hidden}</style></main><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('.tabs button[data-p]');
+  const panels = document.querySelectorAll('.panel');
+
+  tabButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const targetId = button.getAttribute('data-p');
+
+      panels.forEach(function (panel) {
+        panel.hidden = panel.id !== targetId;
+      });
+
+      tabButtons.forEach(function (tab) {
+        tab.setAttribute(
+          'aria-selected',
+          tab === button ? 'true' : 'false'
+        );
+      });
+    });
+  });
+});
+</script>
 
