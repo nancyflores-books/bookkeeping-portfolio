@@ -12,7 +12,7 @@ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 var st=document.createElement('style');
 st.textContent='main .sv-card:hover,main .tl-card:hover,main .ce:hover,main .wf-c:hover,main .dl-card:hover,main .card:hover,main .ab-stats div:hover{transform:none!important;box-shadow:0 0 0 2px #F2A93B,0 0 26px rgba(242,169,59,.5)!important}main .cg-i:hover{transform:none!important;box-shadow:-8px 8px 0 #F2A93B,0 0 26px rgba(242,169,59,.5)}main .cs:hover{box-shadow:-10px 10px 0 #F2A93B,0 0 30px rgba(242,169,59,.5)}';
 document.head.appendChild(st);
-var els=[].slice.call(document.querySelectorAll('main section>*,footer')).filter(function(e){return e.tagName!=='STYLE'});
+var els=[].slice.call(document.querySelectorAll('main section>*')).filter(function(e){return e.tagName!=='STYLE'});
 var ty=els.map(function(){return 0});
 els.forEach(function(el){el.style.transition='box-shadow .22s ease,border-color .22s ease'});
 var busy=false;
