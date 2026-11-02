@@ -427,7 +427,7 @@ var fit=function(){
 var small=innerWidth<500;
 f.style.paddingLeft=f.style.paddingRight=small?'24px':'48px';
 if(small){t.style.whiteSpace='normal';t.style.fontSize='1.4rem';return}
-t.style.whiteSpace='nowrap';t.style.fontSize='100px';
+t.style.whiteSpace='nowrap';t.style.fontSize='70px';
 var w=f.clientWidth-96,n=t.offsetWidth;
 if(w>0&&n>0)t.style.fontSize=Math.max(16,Math.min(Math.floor(100*w/n*.99),80))+'px'};
 fit();addEventListener('resize',fit);addEventListener('load',fit);
