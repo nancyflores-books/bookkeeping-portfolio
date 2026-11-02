@@ -434,26 +434,5 @@ fit();addEventListener('resize',fit);addEventListener('load',fit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
 })();
 </script>
-document.addEventListener('DOMContentLoaded', function () {
-  const tabButtons = document.querySelectorAll('.tabs button[data-p]');
-  const panels = document.querySelectorAll('.panel');
 
-  tabButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      const targetId = button.getAttribute('data-p');
-
-      panels.forEach(function (panel) {
-        panel.hidden = panel.id !== targetId;
-      });
-
-      tabButtons.forEach(function (tab) {
-        tab.setAttribute(
-          'aria-selected',
-          tab === button ? 'true' : 'false'
-        );
-      });
-    });
-  });
-});
-</script>
 
